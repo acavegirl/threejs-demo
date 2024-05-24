@@ -6,6 +6,7 @@ import AutoSize from './pages/AutoSize';
 import Lines from './pages/Lines';
 import Primitives from './pages/Primitives';
 import BasicScene from './pages/BasicScene';
+import BasicMaterial from './pages/BasicMaterial';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       {/* <AutoSize /> */}
       {/* <Lines /> */}
       {/* <Primitives /> */}
-      <BasicScene />
+      {/* <BasicScene /> */}
+      <BasicMaterial />
     </>
   );
 }

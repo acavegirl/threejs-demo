@@ -1,4 +1,4 @@
-import { Mesh, MeshPhongMaterial, Object3D, PointLight, SphereGeometry } from "three"
+import { Mesh, MeshPhongMaterial, Object3D, PointLight, SphereGeometry, MeshLambertMaterial, MeshToonMaterial } from "three"
 
 //创建一个球体
 const sphere = new SphereGeometry(1, 6, 6) //球体为6边形，目的是为了方便我们观察到他在自转

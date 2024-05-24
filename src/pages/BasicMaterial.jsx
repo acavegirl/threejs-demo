@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import * as Three from 'three'
-import { solarSystem, earthOrbit, moonOribit, pointLight, pointLightHelper } from '../utils/index'
+import { sunMesh, earthMesh, moonMesh, solarSystem, earthOrbit, moonOribit, light, pointLightHelper } from '../utils/basicMatrial'
 
 const nodeArr = [solarSystem, earthOrbit, moonOribit] //太阳、地球、月亮对应的网格
 
@@ -20,7 +20,7 @@ export default () => {
         //创建镜头
         const camera = new Three.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 1000)
         // camera.position.set(0, 50, 0)
-        camera.position.set(50, 50, 50)
+        camera.position.set(50, 50, 100)
         // camera.up.set(0, 0, 1)
         camera.lookAt(0, 0, 0)
         cameraRef.current = camera
@@ -30,25 +30,19 @@ export default () => {
         scene.background = new Three.Color(0x111111)
         sceneRef.current = scene
 
-        //将太阳系、灯光添加到场景中
-        scene.add(solarSystem)
-        // scene.add(pointLight)
-        // const pointLightHelper = new Three.PointLightHelper( pointLight, 20 );
-        // scene.add( pointLightHelper );
-
-        //显示轴线
-        // nodeArr.forEach((item) => {
-        //   const axes = new Three.AxesHelper()
-        //   const material = axes.material
-        //   material.depthTest = false
-        //   axes.renderOrder = 1 // renderOrder 的该值默认为 0，这里设置为 1 ，目的是为了提高优先级，避免被物体本身给遮盖住
-        //   item.add(axes)
-        // })
         const axes = new Three.AxesHelper(20)
-        // const material = axes.material
-        // material.depthTest = false
         axes.renderOrder = 1 // renderOrder 的该值默认为 0，这里设置为 1 ，目的是为了提高优先级，避免被物体本身给遮盖住
         scene.add(axes)
+
+
+
+        //将太阳系、灯光添加到场景中
+        // scene.add(sunMesh)
+        // scene.add(earthMesh)
+        // scene.add(moonMesh)
+        scene.add(solarSystem)
+        scene.add(light)
+        
 
         //创建循环渲染的动画
         const render = (time: number) => {
