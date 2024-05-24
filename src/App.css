@@ -1,4 +1,4 @@
-html, body {
+html, body, .full-screen {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -13,4 +13,31 @@ canvas {
   display: block;
   height: inherit;
   width: inherit;
+}
+
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  top: 30px;
+}
+
+.buttons button {
+  width: 200px;
+  height: 30px;
+  margin-left: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.buttons button:first-child {
+  margin-left: 0;
+}
+
+.button-selected{
+  background-color:green;
+  color: white;
 }

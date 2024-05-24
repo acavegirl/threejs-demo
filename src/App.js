@@ -8,6 +8,7 @@ import Primitives from './pages/Primitives';
 import BasicScene from './pages/BasicScene';
 import BasicMaterial from './pages/BasicMaterial';
 import BasicTexture from './pages/BasicTexture';
+import BasicLight from './pages/BasicLight';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       {/* <Primitives /> */}
       {/* <BasicScene /> */}
       {/* <BasicMaterial /> */}
-      <BasicTexture />
+      {/* <BasicTexture /> */}
+      <BasicLight />
     </>
   );
 }
