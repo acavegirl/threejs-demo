@@ -5,6 +5,7 @@ import MultiCube from './pages/MultiCube';
 import AutoSize from './pages/AutoSize';
 import Lines from './pages/Lines';
 import Primitives from './pages/Primitives';
+import BasicScene from './pages/BasicScene';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <MultiCube /> */}
       {/* <AutoSize /> */}
       {/* <Lines /> */}
-      <Primitives />
+      {/* <Primitives /> */}
+      <BasicScene />
     </>
   );
 }
