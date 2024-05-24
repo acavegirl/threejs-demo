@@ -10,6 +10,7 @@ import BasicMaterial from './pages/BasicMaterial';
 import BasicTexture from './pages/BasicTexture';
 import BasicLight from './pages/BasicLight';
 import BasicCamera from './pages/BasicCamera';
+import BasicShadow from './pages/BasicShadow';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
       {/* <BasicMaterial /> */}
       {/* <BasicTexture /> */}
       {/* <BasicLight /> */}
-      <BasicCamera />
+      {/* <BasicCamera /> */}
+      <BasicShadow />
     </>
   );
 }

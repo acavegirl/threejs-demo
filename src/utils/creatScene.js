@@ -42,25 +42,29 @@ const createScene = (type=MaterialType.MESH_PHONE_MATERIAL) => {
     }
 
     const planeGeo = new Three.PlaneGeometry(planeSize, planeSize)
-    const mesh = new Three.Mesh(planeGeo, planeMat)
-    mesh.rotation.x = Math.PI * -0.5
+    const mesh = new Three.Mesh(planeGeo, new Three.MeshStandardMaterial( { color: 0x00ff00 } ))
+    // mesh.rotation.x = Math.PI * -0.5
+    mesh.position.z = -50
+    mesh.receiveShadow = true
     scene.add(mesh)
 
     const cubeGeo = new Three.BoxGeometry(4, 4, 4)
     const cubeMesh = new Three.Mesh(cubeGeo, cubeMat)
-    cubeMesh.position.set(5, 2.5, 0)
+    cubeMesh.position.set(5, 3, -10)
+    cubeMesh.castShadow = true
+    // cubeMesh.receiveShadow = true
     scene.add(cubeMesh)
 
     const sphereGeo = new Three.SphereGeometry(3, 32, 16)
     const sphereMesh = new Three.Mesh(sphereGeo, sphereMat)
-    sphereMesh.position.set(-4, 5, 0)
+    sphereMesh.position.set(0, 5, -10)
+    sphereMesh.castShadow = true
+    // sphereMesh.receiveShadow = true
     scene.add(sphereMesh)
 
     const axes = new Three.AxesHelper(20)
     axes.renderOrder = 10 // renderOrder 的该值默认为 0，这里设置为 1 ，目的是为了提高优先级，避免被物体本身给遮盖住
     scene.add(axes)
-
-    
 
     return scene
 }
