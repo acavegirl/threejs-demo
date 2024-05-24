@@ -38,7 +38,7 @@ export default () => {
 
         const renderer = new Three.WebGLRenderer({ canvas: canvasRef.current})
 
-        const camera = new Three.PerspectiveCamera(45, 2, 0.1, 1000)
+        const camera = new Three.PerspectiveCamera(50, 2, 0.1, 1000)
         camera.position.set(0, 0, 60)
 
         const controls = new OrbitControls(camera, canvasRef.current)

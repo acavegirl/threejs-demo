@@ -56,6 +56,12 @@ const createScene = (type=MaterialType.MESH_PHONE_MATERIAL) => {
     sphereMesh.position.set(-4, 5, 0)
     scene.add(sphereMesh)
 
+    const axes = new Three.AxesHelper(20)
+    axes.renderOrder = 10 // renderOrder 的该值默认为 0，这里设置为 1 ，目的是为了提高优先级，避免被物体本身给遮盖住
+    scene.add(axes)
+
+    
+
     return scene
 }
 
