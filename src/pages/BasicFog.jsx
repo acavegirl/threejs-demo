@@ -18,6 +18,7 @@ export default () => {
 
         const scene = new Three.Scene()
         scene.background = new Three.Color(0x333333)
+        scene.fog = new Three.Fog(0xadd8e6, 1, 200) //向场景中添加 雾
 
         const camera = new Three.PerspectiveCamera(45, 2, 5, 1000)
         camera.position.set(30, 30, 60)
@@ -68,7 +69,8 @@ export default () => {
         const planGeo = new Three.PlaneGeometry(planeSize, planeSize)
         const planeMat = new Three.MeshPhongMaterial({
             map: texture,
-            side: Three.DoubleSide
+            side: Three.DoubleSide,
+            fog: false,
         })
         const planeMesh = new Three.Mesh(planGeo, planeMat)
         planeMesh.receiveShadow = true
@@ -76,7 +78,8 @@ export default () => {
         scene.add(planeMesh)
 
         const material = new Three.MeshPhongMaterial({
-            color: 0x88AACC
+            color: 0x88AACC,
+            // fog: false
         })
         const boxMat = new Three.BoxGeometry(4, 4, 4)
         const boxMesh = new Three.Mesh(boxMat, material)
@@ -90,6 +93,7 @@ export default () => {
         sphereMesh.castShadow = true
         sphereMesh.receiveShadow = true
         sphereMesh.position.set(-4, 5, 0)
+
         scene.add(sphereMesh)
 
         const render = () => {
